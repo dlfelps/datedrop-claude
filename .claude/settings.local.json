@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"\nfrom docx import Document\ndoc = Document\\(''datedrop_system_design_v1.1.docx''\\)\nfor para in doc.paragraphs:\n    print\\(para.text\\)\nprint\\(''\\\\n\\\\n========== TABLES ==========''\\)\nfor i, table in enumerate\\(doc.tables\\):\n    print\\(f''\\\\n--- TABLE {i+1} ---''\\)\n    for row in table.rows:\n        print\\('' | ''.join\\(cell.text for cell in row.cells\\)\\)\n\")",
+      "Bash(go mod tidy:*)",
+      "Bash(go build:*)",
+      "Bash(go test ./... -v -count=1)",
+      "Bash(chmod:*)"
+    ]
+  }
+}
