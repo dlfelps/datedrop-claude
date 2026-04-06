@@ -1,0 +1,22 @@
+{
+  "name": "datedrop Go",
+  "image": "mcr.microsoft.com/devcontainers/go:1.21",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go"
+      ],
+      "settings": {
+        "go.toolsManagement.checkForUpdates": "local",
+        "go.useLanguageServer": true,
+        "editor.formatOnSave": true,
+        "[go]": {
+          "editor.defaultFormatter": "golang.go"
+        }
+      }
+    }
+  },
+  "postCreateCommand": "go mod download && curl -fsSL https://claude.ai/install.sh | bash",
+  "remoteUser": "vscode"
+}
